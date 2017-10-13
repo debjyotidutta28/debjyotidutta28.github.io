@@ -1,0 +1,223 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nosifer');
+@import url('https://fonts.googleapis.com/css?family=Rye');
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat');
+
+
+
+html {
+
+
+	background-image: url(pi.jpg);
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	
+}
+
+body {
+	margin: 0;
+}
+header {
+	background: black;
+	color: red;
+	padding: 8px 0px 3px 40px;
+	height: 40px;
+}
+header h1 {
+	font-family: 'Nosifer', cursive;
+	font font-weight: 400;
+	font-size: px;
+	float: left;
+	margin: 0px;
+	margin-right: 50px;
+
+}
+nav ul {
+	display: inline;
+	padding: 0px 0px 3px 0px;
+	float: left;
+
+}
+
+nav ul li {
+	display: inline-block;
+	list-style-type: none;
+	color: gray;
+	float: left;
+	margin-right: 10px;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+#nav {
+	font-family: 'Rye', cursive;
+}
+
+.homered {
+	background-color: blue;
+	padding: 30px 10px 10px 10px;
+}
+
+.divider {
+	background-color: blue;
+	height: 5px;
+}
+
+.homeblack {
+	padding-bottom: 3px;
+}
+
+.homeblack:hover {
+	background-color: blue;
+	padding: 30px 10px 10px 10px;
+}
+
+
+.backg {
+	background: rgba(0,0,0,0.5);
+
+	font-family: 'Nova Flat', cursive;
+	font-size: 100px;
+	color:  rgb(255,247,0);
+	padding-top: 50px ;
+	padding-left: 20%;
+	font font-weight: 400;
+}
+
+
+.backg1 {
+	color: rgb(166,173,22);
+	height: 250px;
+	font-family: 'Rye', cursive;
+	font font-weight: 400;
+	padding-left: 15%;
+	font-size: 52px;
+
+}
+
+.backg2 {
+	background: rgba(0,0,0,0.8);
+	color: white;
+	height: 75px;
+	width: 600px;
+	text-align-last: center;
+	margin: 0 auto; 
+}
+
+.aas {
+	height: 200px;
+	border-radius: 150px;
+	margin-left:10%;
+}
+.fb {
+	float: right;
+	padding-right: 10px;
+	font-size: 30px;
+}
+
+.instagram {
+	float: right;
+	padding-right: 10px;
+	font-size: 30px;
+}
+.twitter {
+	float: right;
+	padding-right: 10px;
+	font-size: 30px;
+}
+
+.top {
+	height: 128px;
+
+
+}
+
+.abtm {
+	font-size: 30px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	height: 40px;
+	width: 250px;
+	margin-left: 40%;
+
+}
+
+.abtme {
+	border-color: black;
+	font-size: 30px;
+	background-color: rgba(255,255,255,0.6);
+	width: 80%;
+	margin-left: 10%
+}
+
+.fb2 {
+
+	color: black;
+	padding-left: 45%;
+	font-size: 60px
+}
+.insta2 {
+	color: black;
+	font-size: 60px
+}
+.twitter2 {
+	color: black;
+	font-size: 60px
+}
+.a {
+	color: indigo;
+	font-size: 7px;
+}
+.b {
+	color: indigo;
+	font-size: 7px;
+}
+.int {
+	margin-top: 1px;
+	font-size: 40px;
+	
+	background-color: rgba(0,0,0,0.5);
+	color: grey;
+}
+
+.int2 {
+	font-size: 25px;
+	font-family: sans-serif;
+	background-color: rgba(255,255,255,0.7);
+	width: 600px;
+
+
+
+
+}
+.contact {
+	background-color: rgba(0,0,0,0.8);
+	width: 20%;
+	height: 30px;
+	color: white;
+
+	padding-left: 12%;
+	margin-left: 36%;
+	font-style: normal;
+}
+
+.contact1 {
+	background-color: rgba(0,0,0,0.8);
+	width: 20%;
+	height: 40px;
+	color: white;
+
+	padding-left: 12%;
+	margin-left: 36%;
+	margin-top: 200px;
+	font-style: normal;
+}
+
+.im {
+	height: 50px;
+	width: 100px
+}
