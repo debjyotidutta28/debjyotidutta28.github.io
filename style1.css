@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+
+
+span {
+	
+	font-size: 36px;
+	font-weight: bold;
+
+}
+
+.gradient {
+	position: absolute;
+	top: 83px;
+	left: 0px;
+	background: linear-gradient(to bottom, #ffffff 0%, #d6d9e8 100%);
+	height: 90%;
+	width: 100%;
+	}
+.blueline {
+	position: absolute;
+	width: 100%;
+	height: 83px;
+	background-color: #3b5999;
+	top: 0;
+	left: 0;
+	color: white;
+
+
+}
+.header {
+	position: fixed;
+	width: 120%;
+	height: 80px;
+	background-color: #3b5999;
+	top: 0;
+	left: 0;
+	color: white;
+
+}
+#img {
+	position: absolute;
+	top: 12px;
+	left: 180px;
+	width: 60%;
+
+
+}
+#login {
+	position: absolute;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	font-weight: 550;
+	left: 790px;
+	top: 10px;
+	height: 60px;
+	width: 180px;
+	padding-bottom: 30px;
+
+}
+.signin {
+	margin-top: 6px;
+	height: 18px;
+}
+
+#password {
+	position: absolute;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	font-weight: 580;
+	left: 72%;
+	top: 10px;
+	height: 60px;
+	width: 180px;
+
+}
+.forgot {
+	text-decoration: none;
+	color: grey;
+}
+.forgot:hover {
+	text-decoration: underline;
+}
+.enter {
+	right: 60px;
+
+}
+.submit {
+	left: 85%;
+	top: 35px;
+	
+	background-color: rgb(65,98,195);
+	border-color: #0066A2;
+	border-style: outset;
+	text-shadow: none;
+	color:white ;
+	position: absolute;
+	
+	cursor: pointer;
+
+}
+.submit:hover {
+	background-color: #3b5999;
+}
+.newacc {
+	font-family: arial;
+	
+	font-size: 18px;
+	position: absolute;
+	left: 780px;
+	top: 2px;
+
+}
+
+.bar {border-radius: 5px;
+	font-size: 25px;
+	width: 200px;
+}
+.bar {border-radius: 5px;
+	height: 25px;
+	font-size: 20px;
+	width: 200px;
+}
+.bar1 {
+	border-radius: 5px;
+	height: 25px;
+	font-size: 20px;
+	width: 450px;
+}
+
+.bar2 {border-radius: 5px;
+	position: relative;
+	left: 25px;
+	height: 25px;
+	font-size: 20px;
+	width: 215px;
+}
+.bar3 {border-radius: 5px;
+	position: relative;
+	
+	height: 25px;
+	font-size: 20px;
+	width: 450px;
+}
+
+.pic {
+	position: absolute;
+	left: 175px;
+	top: 50px;
+}
+.bday {
+	height: 30px;
+	font-size: 20px;
+	width: 50px;
+}
+.bday1 {
+	height: 25px;
+	font-size: 20px;
+	width: 100px;
+}
+.dob {
+	position: absolute;
+	top: 328px;
+	left: 235px;
+	 
+	 font-size: 12px;
+	 text-decoration:none;
+
+}
+.dob:hover {
+	text-decoration:underline;
+}
+.tandc {
+	font-size: 11px;
+	color: grey;
+}
+.links {
+	text-decoration: none;
+
+}
+.links:hover {
+	text-decoration:underline;
+}
+
+.signup {
+	background-color: rgb(65,98,195);
+	border-color: #0066A2;
+	border-style: outset;
+	text-shadow: none;
+	color:white ;
+	position: relative;
+	height: 40px;
+	width: 150px;
+	cursor: pointer;
+}
+.signup:hover {
+	background-color: #3b5999;
+	text-decoration:underline;
+}
+.langs {
+	background-color: white;
+	height: 20%;
+	width: 100%;
+	position:absolute;
+	top: 110%;
+}
