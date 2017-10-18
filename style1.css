@@ -202,7 +202,8 @@ span {
 }
 .langs {
 	background-color: white;
-	height: 20%;
+	font-family: arial;
+	height: 15%;
 	width: 100%;
 	position:absolute;
 	top: 110%;
@@ -210,4 +211,29 @@ span {
 #lastline {
 	font-size: 14px;
 	text-decoration:none;
+}
+#linkk {
+	font-size: 12px;
+	position: relative;
+	left: 15%;
+	top: -25%;
+	color: blue;
+}
+#c {
+	position: absolute;
+	top: 95%;
+	left: 16%;
+	font-size: 11px;
+	color: grey;
+}
+#par {
+	position: relative;
+	top: -25%;
+	left: 15%;
+	font-size: 17px;
+	color: blue;
+}
+#line {
+	position: relative;
+	top: -20%;
 }
