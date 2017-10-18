@@ -23,7 +23,7 @@ span {
 	position: absolute;
 	width: 100%;
 	height: 83px;
-	background-color: #3b5999;
+	background: linear-gradient(to top, #3b5999 0%, #5563a2 100%);
 	top: 0;
 	left: 0;
 	color: white;
@@ -44,7 +44,7 @@ span {
 	position: absolute;
 	top: 12px;
 	left: 180px;
-	width: 60%;
+	
 
 
 }
@@ -78,7 +78,7 @@ span {
 }
 .forgot {
 	text-decoration: none;
-	color: grey;
+	color: #7694c8;
 }
 .forgot:hover {
 	text-decoration: underline;
@@ -185,18 +185,19 @@ span {
 }
 
 .signup {
-	background-color: rgb(65,98,195);
-	border-color: #0066A2;
+	background: linear-gradient(to top, #588a41 0%, #66a65a 100%);
+	border-color: #416348;
+	border-radius: 5px;
 	border-style: outset;
 	text-shadow: none;
 	color:white ;
 	position: relative;
 	height: 40px;
-	width: 150px;
+	width: 200px;
 	cursor: pointer;
 }
 .signup:hover {
-	background-color: #3b5999;
+	
 	text-decoration:underline;
 }
 .langs {
@@ -205,4 +206,8 @@ span {
 	width: 100%;
 	position:absolute;
 	top: 110%;
+}
+#lastline {
+	font-size: 14px;
+	text-decoration:none;
 }
