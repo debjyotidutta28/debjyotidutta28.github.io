@@ -43,6 +43,16 @@
 
 
     <script src="./app.js"></script>
+    <script>
+        const recorder = document.getElementById('audio-recording');
+
+        recorder.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const url = URL.createObjectURL(file);
+    // Do something with the audio file.
+    
+  });
+</script>
 
 </body>
 </html>
