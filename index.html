@@ -4,18 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voice Assistant</title>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script type="text/javascript" src="./index.js" defer></script>
+    
+    
   </head>
+
+
   <body>
+    
+    <div class="words" contenteditable>
+        <p id="p"></p>
+    </div>
+
+    <script type = "text/javascript" src="voice2text.js"></script> 
+    
+
     <div id="top-container">
       <h1 id="title">Voice Assistant</h1>
-      <button id="start-btn" class="simple-btn">Start Assistant</button>
+      <button id="start-btn" class="simple-btn" onclick="myFunction()">Start Assistant</button>
+      
     </div>
 
     <div id="visualizer-container">
@@ -24,4 +30,7 @@
       <h3 id="search-result"></h3>
     </div>
   </body>
+
+
+
 </html>
