@@ -1,91 +1,73 @@
-class Chatbox {
-    constructor() {
-        this.args = {
-            openButton: document.querySelector('.chatbox__button'),
-            chatBox: document.querySelector('.chatbox__support'),
-            sendButton: document.querySelector('.send__button')
-        }
+// import { getWeather } from "./api";
+// import { wait } from "./utils";
+import VoiceAssistant from "./voiceAssistant";
+import VoiceVisualizer from "./voiceVisualizer";
 
-        this.state = false;
-        this.messages = [];
-    }
+const startButton = document.getElementById("start-btn");
 
-    display() {
-        const {openButton, chatBox, sendButton} = this.args;
+let isStarted = false;
+let processingWord = null;
 
-        openButton.addEventListener('click', () => this.toggleState(chatBox))
+const voiceVisualizer = new VoiceVisualizer();
+const voiceAssistant = new VoiceAssistant();
 
-        sendButton.addEventListener('click', () => this.onSendButton(chatBox))
+async function processWord(word) {
+  switch (word) {
+    case "Hello":
+      voiceAssistant.saySpeech("Hello Islem, How are you doing today?");
+      await wait(3000);
+      break;
+    case "Weather":
+      const location = "London";
+      const weather = await getWeather(location);
+      voiceAssistant.saySpeech(
+        `The weather for today in ${location} is ${weather} degrees`
+      );
+      await wait(3000);
+      break;
+    case "Good Morning":
+      voiceAssistant.saySpeech(
+        "Good Morning islem, Hope you slept well, for Today's schedule you have a meeting at 10am with you manager"
+      );
+      await wait(3000);
+      break;
+    case "Play a Song":
+      voiceAssistant.saySpeech(
+        "We are friends in a sleeping bag splitting the heat"
+      );
+      voiceAssistant.saySpeech(
+        "We have one filthy pillow to share and your lips are in my hair"
+      );
+      voiceAssistant.saySpeech("Someone upstairs has a rat that we laughed at");
+      await wait(3000);
+      break;
+  }
 
-        const node = chatBox.querySelector('input');
-        node.addEventListener("keyup", ({key}) => {
-            if (key === "Enter") {
-                this.onSendButton(chatBox)
-            }
-        })
-    }
-
-    toggleState(chatbox) {
-        this.state = !this.state;
-
-        // show or hides the box
-        if(this.state) {
-            chatbox.classList.add('chatbox--active')
-        } else {
-            chatbox.classList.remove('chatbox--active')
-        }
-    }
-
-    onSendButton(chatbox) {
-        var textField = chatbox.querySelector('input');
-        let text1 = textField.value
-        if (text1 === "") {
-            return;
-        }
-
-        let msg1 = { name: "User", message: text1 }
-        this.messages.push(msg1);
-
-        fetch('http://127.0.0.1:5000/predict', {
-            method: 'POST',
-            body: JSON.stringify({ message: text1 }),
-            mode: 'cors',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-          })
-          .then(r => r.json())
-          .then(r => {
-            let msg2 = { name: "Sam", message: r.answer };
-            this.messages.push(msg2);
-            this.updateChatText(chatbox)
-            textField.value = ''
-
-        }).catch((error) => {
-            console.error('Error:', error);
-            this.updateChatText(chatbox)
-            textField.value = ''
-          });
-    }
-
-    updateChatText(chatbox) {
-        var html = '';
-        this.messages.slice().reverse().forEach(function(item, index) {
-            if (item.name === "Sam")
-            {
-                html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>'
-            }
-            else
-            {
-                html += '<div class="messages__item messages__item--operator">' + item.message + '</div>'
-            }
-          });
-
-        const chatmessage = chatbox.querySelector('.chatbox__messages');
-        chatmessage.innerHTML = html;
-    }
+  processingWord = null;
 }
 
+function onListen(word) {
+  if (processingWord) return;
 
-const chatbox = new Chatbox();
-chatbox.display();
+  console.log("Word: ", word);
+  processingWord = word;
+  processWord(word);
+}
+
+startButton.onclick = async () => {
+  if (!isStarted) {
+    //Start assistant
+    startButton.innerText = "Starting...";
+    await voiceAssistant.startAssistant(onListen);
+    await voiceVisualizer.startVisualization();
+    isStarted = true;
+    startButton.innerText = "Stop Assistant";
+  } else {
+    //Stop assistant
+    startButton.innerText = "Stopping...";
+    await voiceAssistant.stopAssistant();
+    voiceVisualizer.stopVisualization();
+    isStarted = false;
+    startButton.innerText = "Start Assistant";
+  }
+};

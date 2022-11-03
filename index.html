@@ -1,81 +1,27 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Assistant</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Chatbot</title>
-</head>
-<body>
-
-    
-<div class="container">
-    
-    <input name="audio-recording" type="file" accept="audio/*" id="audio-recording" capture>
-    <label for="audio-recording">Add Audio</label>
-
-    <p id="output"></p>
-    <div class="chatbox">
-        <div class="chatbox__support">
-            <div class="chatbox__header">
-                <div class="chatbox__image--header">
-                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
-                </div>
-                <div class="chatbox__content--header">
-                    <h4 class="chatbox__heading--header">BRO by DebzAI</h4>
-                    <p class="chatbox__description--header">Hi. I am bro. Peace!!</p>
-                </div>
-            </div>
-            <div class="chatbox__messages">
-                <div></div>
-            </div>
-            <div class="chatbox__footer">
-                <input type="text" placeholder="Write a message....">
-                <button class="chatbox__send--footer send__button">Send</button>
-            </div>
-        </div>
-        <div class="chatbox__button">
-            <button><img src="chatbox-icon.svg" /></button>
-        </div>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="./index.js" defer></script>
+  </head>
+  <body>
+    <div id="top-container">
+      <h1 id="title">Voice Assistant</h1>
+      <button id="start-btn" class="simple-btn">Start Assistant</button>
     </div>
-</div>
 
-
-    <script src="./app.js"></script>
-    <script>
-        const recorder = document.getElementById('audio-recording');
-
-        recorder.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            const url = URL.createObjectURL(file);
-    // Do something with the audio file.
-    
-        });
-    </script>
-    
-    <script>
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(stream => {
-            const mediaRecorder = new MediaRecorder(stream);
-            mediaRecorder.start();
-
-            const audioChunks = [];
-            mediaRecorder.addEventListener("dataavailable", event => {
-              audioChunks.push(event.data);
-            });
-
-            mediaRecorder.addEventListener("stop", () => {
-              const audioBlob = new Blob(audioChunks);
-              const audioUrl = URL.createObjectURL(audioBlob);
-              const audio = new Audio(audioUrl);
-              audio.play();
-            });
-
-            setTimeout(() => {
-              mediaRecorder.stop();
-            }, 3000);
-          });
-    </script>
-</body>
+    <div id="visualizer-container">
+      <canvas id="output" width="250" height="200"></canvas>
+      <h2 id="word-preview"></h2>
+      <h3 id="search-result"></h3>
+    </div>
+  </body>
 </html>
